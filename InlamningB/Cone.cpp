@@ -1,26 +1,21 @@
 #include "Cone.h"
 
-
-
-Cone::Cone(string shapeName, float C_radius, int C_height)
-	:Shape(shapeName)
+Cone::Cone(string shapeName, int height, float C_radius)
+	:Shape(shapeName, height)
 {
 	this->C_radius = C_radius;
-	this->C_height = C_height;
 }
 
 Cone::Cone(const Cone& origObj)
 	:Shape(origObj)
 {
 	this->C_radius = origObj.C_radius;
-	this->C_height = origObj.C_height;
 }
 
 Cone& Cone::operator=(const Cone& origObj)
 {
-	Cone::operator=(origObj);
+	operator=(origObj);
 	this->C_radius = origObj.C_radius;
-	this->C_height = origObj.C_height;
 	return *this;
 }
 
@@ -34,12 +29,12 @@ float Cone::getC_radius() const
 	return this->C_radius;
 }
 
-int Cone::getC_height() const
+void Cone::setC_radius(float C_radius)
 {
-	return this->C_height;
+	this->C_radius = C_radius;
 }
 
-string Cone::toStringAsCone() const
+string Cone::toStringSpecific() const
 {
-	return "| radius: " + to_string(this->C_radius) + " | height: " + to_string(this->C_height) + " |\n";
+	return "| radius: " + to_string(this->C_radius) + " |\n";
 }

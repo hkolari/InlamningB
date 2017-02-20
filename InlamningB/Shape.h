@@ -8,14 +8,20 @@ class Shape
 {
 private:
 	string shapeName;
+	int height;
 
 public:
-	Shape(string shapeName);
-	Shape();
+	Shape(string shapeName = "EMPTY", int height = -1);
 	Shape(const Shape& origObj);
 	Shape& operator=(const Shape& origObj);
 	virtual ~Shape();
+
 	string getShapeName() const;
+	int getHeight() const;
+
+	//No need for setShapeName, since we don't want to change it.
+	void setHeight(int height);
+
 	string toString() const;
 	virtual string toStringSpecific() const = 0;
 };

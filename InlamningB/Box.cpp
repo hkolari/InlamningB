@@ -1,13 +1,11 @@
 #include "Box.h"
 
 
-
-Box::Box(string shapeName, int B_length, int B_width, int b_height)
-	:Shape(shapeName)
+Box::Box(string shapeName, int height, int B_length, int B_width)
+	:Shape(shapeName, height)
 {
 	this->B_length = B_length;
 	this->B_width = B_width;
-	this->B_height = B_height;
 }
 
 Box::Box(const Box& origObj)
@@ -15,15 +13,13 @@ Box::Box(const Box& origObj)
 {
 	this->B_length = origObj.B_length;
 	this->B_width = origObj.B_width;
-	this->B_height = origObj.B_height;
 }
 
 Box& Box::operator=(const Box& origObj)
 {
-	Shape::operator=(origObj);
+	operator=(origObj);
 	this->B_length = origObj.B_length;
 	this->B_width = origObj.B_width;
-	this->B_height = origObj.B_height;
 	return *this;
 }
 
@@ -41,12 +37,17 @@ int Box::getB_width() const
 	return this->B_width;
 }
 
-int Box::getB_height() const
+void Box::setB_length(int b_length)
 {
-	return this->B_height;
+	this->B_length = b_length;
 }
 
-string Box::toStringAsBox() const
+void Box::setB_width(int B_width)
 {
-	return "| length: " + to_string(this->B_length) + " | width: " + to_string(this->B_width) + " | height: " + to_string(this->B_height) + " |\n";
+	this->B_width = B_width;
+}
+
+string Box::toStringSpecific() const
+{
+	return "| length: " + to_string(this->B_length) + " | width: " + to_string(this->B_width) + " |\n";
 }
