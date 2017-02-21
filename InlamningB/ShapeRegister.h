@@ -1,3 +1,5 @@
+//Made by Henry Kolari (heko16)
+
 #ifndef SHAPEREGISTER_H
 #define SHAPEREGISTER_H
 #include <string>
@@ -27,7 +29,7 @@ public:
 	bool getAllShapesAsString(string arr[], int capOfArr);
 	bool getAllConesAsString(string arr[], int capOfArr);
 	bool getAllBoxesAsString(string arr[], int capOfArr);
-	bool editACone(int height, int radius);
+	bool editACone(int height, float radius);
 	bool editABox(int height, int theValue, int choice);
 	int nrOfShapes() const; //Pretty much getNrOfShapes
 	int nrOfCones() const;

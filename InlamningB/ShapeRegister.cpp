@@ -1,3 +1,5 @@
+//Made by Henry Kolari (heko16)
+
 #include "ShapeRegister.h"
 #include "Cone.h"
 #include "Box.h"
@@ -33,7 +35,6 @@ ShapeRegister::ShapeRegister(const ShapeRegister& origObj)
 	Cone* aConePtr = nullptr;
 	for (int i = 0; i < origObj.amountOfShapes; i++)
 	{
-		//TODO: Might be some bugs here. Unsure if I did right.
 		aBoxPtr = dynamic_cast<Box*>(origObj.shapes[i]);
 		if (aBoxPtr != nullptr)
 		{
@@ -122,6 +123,7 @@ bool ShapeRegister::addBox(string shapeName, int height, int length, int width)
 		{
 			this->expand();
 		}
+
 		this->shapes[this->amountOfShapes++] = new Box(shapeName, height, length, width);
 	}
 	return existance;
@@ -152,7 +154,7 @@ bool ShapeRegister::removeShape(int height)
 //EDIT AND STUFF
 //(I presume you are not allowed to edit the height)
 
-bool ShapeRegister::editACone(int height, int C_radius)
+bool ShapeRegister::editACone(int height, float C_radius)
 {
 	bool edited = false;
 	for (int i = 0; i < this->amountOfShapes; i++)
@@ -186,12 +188,12 @@ bool ShapeRegister::editABox(int height, int theValue, int choice)
 
 			if (aBoxPtr != nullptr)
 			{
-				if (choice = 1)
+				if (choice == 1)
 				{
 					aBoxPtr->setB_length(theValue);
 					edited = true;
 				}
-				if (choice = 2)
+				if (choice == 2)
 				{
 					aBoxPtr->setB_width(theValue);
 					edited = true;

@@ -1,5 +1,5 @@
+//Made by Henry Kolari (heko16)
 #include "Box.h"
-
 
 Box::Box(string shapeName, int height, int B_length, int B_width)
 	:Shape(shapeName, height)

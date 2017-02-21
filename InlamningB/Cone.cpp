@@ -1,3 +1,5 @@
+//Made by Henry Kolari (heko16)
+
 #include "Cone.h"
 
 Cone::Cone(string shapeName, int height, float C_radius)

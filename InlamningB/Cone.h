@@ -1,3 +1,5 @@
+//Made by Henry Kolari (heko16)
+
 #ifndef CONE_H
 #define CONE_H
 #include "Shape.h"

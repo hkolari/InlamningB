@@ -1,3 +1,5 @@
+//Made by Henry Kolari (heko16)
+
 #ifndef SHAPE_H
 #define SHAPE_H
 #include <string>
