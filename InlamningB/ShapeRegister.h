@@ -26,9 +26,9 @@ public:
 	bool removeShape(int height);
 	bool getAllShapesAsString(string arr[], int capOfArr);
 	bool getAllConesAsString(string arr[], int capOfArr);
-	bool getAllBoxesAsStrings(string arr[], int capOfArr);
-	bool editACone();
-	bool editABox();
+	bool getAllBoxesAsString(string arr[], int capOfArr);
+	bool editACone(int height, int radius);
+	bool editABox(int height, int theValue, int choice);
 	int nrOfShapes() const; //Pretty much getNrOfShapes
 	int nrOfCones() const;
 	int nrOfBoxes() const;

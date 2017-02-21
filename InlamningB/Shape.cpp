@@ -41,5 +41,5 @@ void Shape::setHeight(int height)
 
 string Shape::toString() const
 {
-	return "| Shape: " + this->shapeName + " | Height: " + to_string(this->height) + " |\n" + toStringSpecific() + "\n";
+	return "| shape: " + this->shapeName + " | height: " + to_string(this->height) + " |\n" + toStringSpecific() + "\n";
 }

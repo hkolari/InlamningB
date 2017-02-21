@@ -29,6 +29,11 @@ float Cone::getC_radius() const
 	return this->C_radius;
 }
 
+float Cone::getC_volume() const
+{
+	return ((3.1415*(this->getC_radius()*this->getC_radius())*this->getHeight()) / 3);
+}
+
 void Cone::setC_radius(float C_radius)
 {
 	this->C_radius = C_radius;
@@ -36,5 +41,5 @@ void Cone::setC_radius(float C_radius)
 
 string Cone::toStringSpecific() const
 {
-	return "| radius: " + to_string(this->C_radius) + " |\n";
+	return "| radius: " + to_string(this->C_radius) + " | volume: " + to_string(this->getC_volume()) + " |\n";
 }

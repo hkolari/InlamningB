@@ -20,7 +20,7 @@ public:
 	int getHeight() const;
 
 	//No need for setShapeName, since we don't want to change it.
-	void setHeight(int height);
+	void setHeight(int height); //Unsure if we need this. Might delete later.
 
 	string toString() const;
 	virtual string toStringSpecific() const = 0;

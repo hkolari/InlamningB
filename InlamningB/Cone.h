@@ -15,6 +15,7 @@ public:
 	virtual ~Cone();
 	float getC_radius() const;
 	void setC_radius(float C_radius);
+	float getC_volume() const;
 	string toStringSpecific() const;
 };
 

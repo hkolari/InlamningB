@@ -17,6 +17,8 @@ public:
 	virtual ~Box();
 	int getB_length() const;
 	int getB_width() const;
+	int getB_volume() const;
+
 	void setB_length(int b_length);
 	void setB_width(int B_width);
 	string toStringSpecific() const;

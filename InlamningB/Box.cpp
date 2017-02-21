@@ -37,6 +37,11 @@ int Box::getB_width() const
 	return this->B_width;
 }
 
+int Box::getB_volume() const
+{
+	return (B_length * B_width * this->getHeight());
+}
+
 void Box::setB_length(int b_length)
 {
 	this->B_length = b_length;
@@ -49,5 +54,5 @@ void Box::setB_width(int B_width)
 
 string Box::toStringSpecific() const
 {
-	return "| length: " + to_string(this->B_length) + " | width: " + to_string(this->B_width) + " |\n";
+	return "| length: " + to_string(this->B_length) + " | width: " + to_string(this->B_width) + " | volume: " + to_string(this->getB_volume()) + " |\n";
 }

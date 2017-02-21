@@ -149,6 +149,65 @@ bool ShapeRegister::removeShape(int height)
 }
 
 ///////////////////////////////////////////////////////////////////////
+//EDIT AND STUFF
+//(I presume you are not allowed to edit the height)
+
+bool ShapeRegister::editACone(int height, int C_radius)
+{
+	bool edited = false;
+	for (int i = 0; i < this->amountOfShapes; i++)
+	{
+		if (this->shapes[i]->getHeight() == height)
+		{
+			Cone* aConePtr = nullptr;
+			
+			aConePtr = dynamic_cast<Cone*>(this->shapes[i]);
+
+			if (aConePtr != nullptr)
+			{
+				aConePtr->setC_radius(C_radius);
+				edited = true;
+			}
+		}
+	}
+	return edited;
+}
+
+bool ShapeRegister::editABox(int height, int theValue, int choice)
+{
+	bool edited = false;
+	for (int i = 0; i < this->amountOfShapes; i++)
+	{
+		if (this->shapes[i]->getHeight() == height)
+		{
+			Box* aBoxPtr = nullptr;
+
+			aBoxPtr = dynamic_cast<Box*>(this->shapes[i]);
+
+			if (aBoxPtr != nullptr)
+			{
+				if (choice = 1)
+				{
+					aBoxPtr->setB_length(theValue);
+					edited = true;
+				}
+				if (choice = 2)
+				{
+					aBoxPtr->setB_width(theValue);
+					edited = true;
+				}
+			}
+		}
+	}
+	return edited;
+}
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
 
 ShapeRegister::~ShapeRegister()
 {
@@ -176,6 +235,37 @@ bool ShapeRegister::getAllShapesAsString(string arr[], int capOfArr)
 	return filled;
 }
 
+bool ShapeRegister::getAllConesAsString(string arr[], int capOfArr)
+{
+	bool filled = false;
+	Cone* aConePtr = nullptr;
+	for (int i = 0; i < this->amountOfShapes; i++)
+	{
+		aConePtr = dynamic_cast<Cone*>(this->shapes[i]);
+		if (aConePtr != nullptr)
+		{
+			arr[i] = this->shapes[i]->toString();
+		}
+		filled = true;
+	}
+	return filled;
+}
+
+bool ShapeRegister::getAllBoxesAsString(string arr[], int capOfArr)
+{
+	bool filled = false;
+	Box* aBoxPtr = nullptr;
+	for (int i = 0; i < this->amountOfShapes; i++)
+	{
+		aBoxPtr = dynamic_cast<Box*>(this->shapes[i]);
+		if (aBoxPtr != nullptr)
+		{
+			arr[i] = this->shapes[i]->toString();
+		}
+		filled = true;
+	}
+	return filled;
+}
 
 
 //NUMBER OF THIS AND THAT
